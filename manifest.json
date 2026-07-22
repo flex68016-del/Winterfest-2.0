@@ -1,0 +1,26 @@
+{
+  "name": "WinterFest Togo",
+  "short_name": "WinterFest",
+  "description": "Festival chrétien de louange, danse et adoration au Togo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#24113D",
+  "theme_color": "#24113D",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo1.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["events", "music", "religion"],
+  "lang": "fr"
+}

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /documents/
 Disallow: /icons/
 
-Sitemap: https://winterfesttogo.vercel.app/sitemap.xml
+Sitemap: https://winterfesttogo.org/sitemap.xml
