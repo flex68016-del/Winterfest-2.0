@@ -3,4 +3,4 @@ Allow: /
 Disallow: /documents/
 Disallow: /icons/
 
-Sitemap: https://winterfesttogo.org/sitemap.xml
+Sitemap: https://www.winterfesttogo.org/sitemap.xml
