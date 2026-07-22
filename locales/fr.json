@@ -15,6 +15,7 @@
     "about": "À propos",
     "gallery": "Galerie",
     "event": "Édition 2026",
+    "live": "Live",
     "testimonies": "Témoignages",
     "volunteer": "Bénévoles",
     "contact": "Contact",
@@ -446,5 +447,30 @@
   "language_switcher": {
     "fr": "🇫🇷 FR",
     "en": "🇺🇸 EN"
+  },
+  "live": {
+    "title": "Live - WinterFest Togo",
+    "description": "Regardez WinterFest Togo en direct. Suivez le live du festival chrétien jeunesse depuis Lomé, Togo.",
+    "keywords": "WinterFest Togo, Live, Direct, Streaming, YouTube, Festival chrétien, Togo, Lomé",
+    "og_title": "Live - WinterFest Togo",
+    "og_description": "Regardez WinterFest Togo en direct sur YouTube.",
+    "twitter_title": "Live - WinterFest Togo",
+    "twitter_description": "Regardez WinterFest Togo en direct sur YouTube.",
+    "page_title": "WINTERFEST TOGO 2026 — EN DIRECT",
+    "page_subtitle": "Live",
+    "breadcrumb_home": "Accueil",
+    "breadcrumb_current": "Live",
+    "live_status_offline": "Le prochain live commence bientôt",
+    "countdown_title": "Prochain live",
+    "countdown_days": "Jours",
+    "countdown_hours": "Heures",
+    "countdown_minutes": "Minutes",
+    "countdown_seconds": "Secondes",
+    "share_title": "Partager",
+    "share_text": "Partagez le live avec vos amis",
+    "share_instagram": "Partager sur Instagram",
+    "share_facebook": "Partager sur Facebook",
+    "share_tiktok": "Partager sur TikTok",
+    "share_whatsapp": "Partager sur WhatsApp"
   }
 }

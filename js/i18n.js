@@ -342,6 +342,7 @@ class I18n {
         if (path.includes('gallery.html')) return 'gallery.title';
         if (path.includes('testimonies.html')) return 'testimonies.title';
         if (path.includes('volunteer.html')) return 'volunteer.title';
+        if (path.includes('live.html')) return 'live.title';
         return 'home.title';
     }
 
