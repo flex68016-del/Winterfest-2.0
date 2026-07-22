@@ -4,8 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initAccordion();
-    initContactForm();
-    initVolunteerForm();
+    initWeb3Forms();
 });
 
 // ============================================
@@ -33,67 +32,152 @@ function initAccordion() {
 }
 
 // ============================================
-// CONTACT FORM
+// WEB3FORMS UNIFIED SUBMISSION
 // ============================================
-function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+function initWeb3Forms() {
+    const forms = document.querySelectorAll('form[action="https://api.web3forms.com/submit"]');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
+            // Check honeypot
+            const honeypot = form.querySelector('input[name="honeypot"]');
+            if (honeypot && honeypot.value) {
+                return;
+            }
 
-            // Create mailto link
-            const mailtoLink = `mailto:contact@winterfesttogo.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                `Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\nMessage:\n${message}`
-            )}`;
+            // Clear previous messages
+            clearFormMessages(form);
 
-            // Open email client
-            window.location.href = mailtoLink;
+            // Validate form
+            const validation = validateForm(form);
+            if (!validation.valid) {
+                showFormMessage(form, validation.message, 'error');
+                return;
+            }
 
-            // Show success message
-            showFormMessage(contactForm, 'Votre message a été préparé. Veuillez l\'envoyer via votre client email.', 'success');
+            // Show loading state
+            const submitBtn = form.querySelector('.form-submit');
+            setFormLoading(form, true);
+
+            // Prepare form data
+            const formData = new FormData(form);
+            
+            // Sanitize values
+            const sanitizedData = {};
+            for (const [key, value] of formData.entries()) {
+                if (key !== 'honeypot' && key !== 'access_key' && key !== 'subject' && key !== 'from_name' && key !== 'source') {
+                    sanitizedData[key] = sanitizeInput(value);
+                }
+            }
+
+            // Add sanitized values back to FormData
+            const submitFormData = new FormData();
+            formData.forEach((value, key) => {
+                if (sanitizedData[key] !== undefined) {
+                    submitFormData.append(key, sanitizedData[key]);
+                } else {
+                    submitFormData.append(key, value);
+                }
+            });
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: submitFormData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Determine success message based on form source
+                    const source = formData.get('source');
+                    let successKey = 'js.form.success_contact';
+                    if (source === 'Formulaire Bénévole') successKey = 'js.form.success_volunteer';
+                    else if (source === 'Formulaire Hébergement') successKey = 'js.form.success_housing';
+                    else if (source === 'Formulaire Inscription') successKey = 'js.form.success_registration';
+
+                    const successMsg = window.i18n ? window.i18n.t(successKey) : 'Merci ! Votre formulaire a été envoyé avec succès.';
+                    showFormMessage(form, successMsg, 'success');
+                    form.reset();
+                } else {
+                    const errorMsg = window.i18n ? window.i18n.t('js.form.error') : 'Une erreur est survenue. Veuillez réessayer.';
+                    showFormMessage(form, errorMsg, 'error');
+                }
+            } catch (error) {
+                const errorMsg = window.i18n ? window.i18n.t('js.form.error') : 'Une erreur est survenue. Veuillez réessayer.';
+                showFormMessage(form, errorMsg, 'error');
+            } finally {
+                setFormLoading(form, false);
+            }
         });
-    }
+    });
 }
 
-// ============================================
-// VOLUNTEER FORM
-// ============================================
-function initVolunteerForm() {
-    const volunteerForm = document.getElementById('volunteer-form');
-
-    if (volunteerForm) {
-        volunteerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Redirect to Google Forms
-            const googleFormsUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScN4eUH--0uT6GzMbimxPt9Gm9PizcLvtIEgL1N-44qPZXHxQ/viewform?usp=header';
-            
-            // Open in new tab
-            window.open(googleFormsUrl, '_blank');
-
-            // Show success message
-            showFormMessage(volunteerForm, 'Redirection vers le formulaire d\'inscription...', 'success');
-        });
+function validateForm(form) {
+    const source = form.querySelector('input[name="source"]')?.value;
+    
+    // Common validation
+    const emailInput = form.querySelector('input[type="email"]');
+    if (emailInput && emailInput.value.trim()) {
+        if (!validateEmail(emailInput.value.trim())) {
+            return { valid: false, message: window.i18n ? window.i18n.t('js.form.error_email_invalid') : 'Veuillez entrer une adresse email valide.' };
+        }
     }
+
+    const phoneInput = form.querySelector('input[type="tel"]');
+    if (phoneInput && phoneInput.value.trim()) {
+        if (!validatePhone(phoneInput.value.trim())) {
+            return { valid: false, message: window.i18n ? window.i18n.t('js.form.error_phone_invalid') : 'Veuillez entrer un numéro de téléphone valide.' };
+        }
+    }
+
+    // Checkbox validation for volunteer form
+    if (source === 'Formulaire Bénévole') {
+        const checkboxes = form.querySelectorAll('input[name="service"]:checked');
+        if (checkboxes.length === 0) {
+            return { valid: false, message: window.i18n ? window.i18n.t('js.form.error_service_required') : 'Veuillez sélectionner au moins un service.' };
+        }
+    }
+
+    // GDPR validation for contact form
+    if (source === 'Formulaire Contact') {
+        const gdpr = form.querySelector('input[name="gdpr"]');
+        if (!gdpr || !gdpr.checked) {
+            return { valid: false, message: window.i18n ? window.i18n.t('js.form.error_gdpr_required') : 'Vous devez accepter la politique de confidentialité.' };
+        }
+    }
+
+    // Required fields validation (HTML5 validation handles most, but we double-check)
+    const requiredInputs = form.querySelectorAll('input[required], textarea[required]');
+    for (const input of requiredInputs) {
+        if (!input.value.trim()) {
+            return { valid: false, message: window.i18n ? window.i18n.t('js.form.error') : 'Veuillez remplir tous les champs obligatoires.' };
+        }
+    }
+
+    return { valid: true };
+}
+
+function sanitizeInput(value) {
+    if (typeof value !== 'string') return value;
+    return value.trim().replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 // ============================================
 // FORM MESSAGE UTILITY
 // ============================================
-function showFormMessage(form, message, type) {
-    // Remove existing message
+function clearFormMessages(form) {
     const existingMessage = form.querySelector('.form-message');
     if (existingMessage) {
         existingMessage.remove();
     }
+}
+
+function showFormMessage(form, message, type) {
+    // Remove existing message
+    clearFormMessages(form);
 
     // Create message element
     const messageDiv = document.createElement('div');
@@ -116,6 +200,25 @@ function showFormMessage(form, message, type) {
     }, 5000);
 }
 
+function setFormLoading(form, isLoading) {
+    const submitBtn = form.querySelector('.form-submit');
+    if (!submitBtn) return;
+
+    if (isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.originalText = submitBtn.textContent;
+        const sendingText = window.i18n ? window.i18n.t('js.form.sending') : 'Envoi...';
+        submitBtn.textContent = sendingText;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.style.cursor = 'not-allowed';
+    } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitBtn.dataset.originalText || submitBtn.textContent;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+    }
+}
+
 // ============================================
 // FORM VALIDATION
 // ============================================
@@ -128,3 +231,4 @@ function validatePhone(phone) {
     const re = /^\+?[\d\s-]{10,}$/;
     return re.test(phone);
 }
+

@@ -1,0 +1,38 @@
+{
+  "rewrites": [
+    {
+      "source": "/index.html",
+      "destination": "/"
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about"
+    },
+    {
+      "source": "/gallery.html",
+      "destination": "/gallery"
+    },
+    {
+      "source": "/event.html",
+      "destination": "/event"
+    },
+    {
+      "source": "/testimonies.html",
+      "destination": "/testimonies"
+    },
+    {
+      "source": "/volunteer.html",
+      "destination": "/volunteer"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact"
+    },
+    {
+      "source": "/:path*/index.html",
+      "destination": "/:path*/"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

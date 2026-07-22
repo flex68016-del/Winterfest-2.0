@@ -4,7 +4,9 @@
 
 // Initialize Lucide icons
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+    }
     initNavigation();
     initScrollAnimations();
     initLightbox();

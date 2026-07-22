@@ -17,6 +17,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="WinterFest Togo">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="fr" href="https://winterfesttogo.vercel.app/contact.html">
+    <link rel="alternate" hreflang="en" href="https://winterfesttogo.vercel.app/contact.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://winterfesttogo.vercel.app/contact.html">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +33,6 @@
     <link rel="icon" type="image/png" href="images/logo1.png" sizes="32x32">
     <link rel="icon" type="image/png" href="images/logo.png" sizes="192x192">
     <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#24113D">
     <title>Contact - WinterFest Togo</title>
     <link rel="stylesheet" href="css/style.css">
@@ -35,7 +40,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-violet-deep);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .skip-to-content:focus {
+            top: 0;
+        }
+        *:focus-visible {
+            outline: 3px solid var(--color-gold-elegant);
+            outline-offset: 2px;
+        }
+    </style>
     
     <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
@@ -81,35 +107,40 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content" data-i18n="a11y.skip_to_content">Aller au contenu principal</a>
+    
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <img src="images/logo.png" alt="Winterfest Togo 2026 - Logo du festival chrétien" class="logo" width="200" height="50">
             <nav class="nav">
-                <button class="nav-toggle" aria-label="Menu">
+                <button class="nav-toggle" aria-label="Menu" data-i18n="nav.menu" data-i18n-aria="true">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="about.html" class="nav-link">À propos</a></li>
-                    <li><a href="gallery.html" class="nav-link">Galerie</a></li>
-                    <li><a href="event.html" class="nav-link">Édition 2026</a></li>
-                    <li><a href="news.html" class="nav-link">Actualités</a></li>
-                    <li><a href="testimonies.html" class="nav-link">Témoignages</a></li>
-                    <li><a href="volunteer.html" class="nav-link">Bénévoles</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Galerie</a></li>
+                    <li><a href="event.html" class="nav-link" data-i18n="nav.event">Édition 2026</a></li>
+                    <li><a href="testimonies.html" class="nav-link" data-i18n="nav.testimonies">Témoignages</a></li>
+                    <li><a href="volunteer.html" class="nav-link" data-i18n="nav.volunteer">Bénévoles</a></li>
+                    <li><a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a></li>
+                    <li class="language-switcher">
+                        <button class="lang-btn active" data-lang="fr" data-i18n="language_switcher.fr">🇫🇷 FR</button>
+                        <button class="lang-btn" data-lang="en" data-i18n="language_switcher.en">🇺🇸 EN</button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero" id="main-content">
         <div class="container">
-            <h1 class="page-hero-title">Contact</h1>
-            <p class="page-hero-subtitle">Nous sommes à votre écoute</p>
+            <h1 class="page-hero-title" data-i18n="contact.page_title">Contact</h1>
+            <p class="page-hero-subtitle" data-i18n="contact.page_subtitle">Nous sommes à votre écoute</p>
         </div>
     </section>
 
@@ -117,10 +148,10 @@
     <div class="container">
         <nav class="breadcrumb">
             <div class="breadcrumb-item">
-                <a href="index.html">Accueil</a>
+                <a href="index.html" data-i18n="contact.breadcrumb_home">Accueil</a>
                 <span class="breadcrumb-separator">/</span>
             </div>
-            <div class="breadcrumb-item active">Contact</div>
+            <div class="breadcrumb-item active" data-i18n="contact.breadcrumb_current">Contact</div>
         </nav>
     </div>
 
@@ -130,42 +161,53 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl);">
                 <!-- Formulaire -->
                 <div>
-                    <h2 class="section-title">Envoyez-nous un message</h2>
-                    <form class="form" id="contact-form">
+                    <h2 class="section-title" data-i18n="contact.form_title">Envoyez-nous un message</h2>
+                    <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return false;">
+                        <input type="hidden" name="access_key" value="611d385c-b19c-440c-8140-2c203060fae7">
+                        <input type="hidden" name="subject" value="Nouveau formulaire WinterFest">
+                        <input type="hidden" name="from_name" value="WinterFest Togo">
+                        <input type="hidden" name="source" value="Formulaire Contact">
+                        <input type="text" name="honeypot" style="display: none;">
                         <div class="form-group">
-                            <label for="contact-nom" class="form-label">Nom *</label>
+                            <label for="contact-nom" class="form-label" data-i18n="contact.form_nom">Nom *</label>
                             <input type="text" id="contact-nom" name="nom" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="contact-email" class="form-label">Email *</label>
+                            <label for="contact-email" class="form-label" data-i18n="contact.form_email">Email *</label>
                             <input type="email" id="contact-email" name="email" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="contact-telephone" class="form-label">Téléphone</label>
-                            <input type="tel" id="contact-telephone" name="telephone" class="form-input">
+                            <label for="contact-telephone" class="form-label" data-i18n="contact.form_telephone">Téléphone</label>
+                            <input type="tel" id="contact-telephone" name="telephone" class="form-input" placeholder="+228 90 00 00 00" data-i18n-placeholder="contact.placeholder_telephone">
                         </div>
                         <div class="form-group">
-                            <label for="contact-sujet" class="form-label">Sujet *</label>
+                            <label for="contact-sujet" class="form-label" data-i18n="contact.form_sujet">Sujet *</label>
                             <input type="text" id="contact-sujet" name="sujet" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="contact-message" class="form-label">Message *</label>
+                            <label for="contact-message" class="form-label" data-i18n="contact.form_message">Message *</label>
                             <textarea id="contact-message" name="message" class="form-textarea" required></textarea>
                         </div>
-                        <button type="submit" class="form-submit">Envoyer le message</button>
+                        <div class="form-group">
+                            <label class="form-label" style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 400;">
+                                <input type="checkbox" id="contact-gdpr" name="gdpr" class="form-input" style="width: auto; margin-top: 0.25rem;" required>
+                                <span data-i18n="contact.form_gdpr">J'accepte que mes données soient traitées conformément à la politique de confidentialité de WinterFest Togo. *</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="form-submit" data-i18n="contact.form_submit">Envoyer le message</button>
                     </form>
                 </div>
 
                 <!-- Informations de contact -->
                 <div>
-                    <h2 class="section-title">Informations de contact</h2>
+                    <h2 class="section-title" data-i18n="contact.info_title">Informations de contact</h2>
                     <div class="practical-info" style="margin-bottom: var(--spacing-xl);">
                         <div class="practical-item">
                             <div class="practical-icon">
                                 <i data-lucide="mail"></i>
                             </div>
                             <div class="practical-details">
-                                <h4>Email</h4>
+                                <h4 data-i18n="contact.info_email">Email</h4>
                                 <p>contact@winterfesttogo.org</p>
                             </div>
                         </div>
@@ -174,7 +216,7 @@
                                 <i data-lucide="phone"></i>
                             </div>
                             <div class="practical-details">
-                                <h4>Téléphone</h4>
+                                <h4 data-i18n="contact.info_phone">Téléphone</h4>
                                 <p>+228 90 05 76 00</p>
                                 <p>+228 90 41 78 34</p>
                             </div>
@@ -184,35 +226,35 @@
                                 <i data-lucide="map-pin"></i>
                             </div>
                             <div class="practical-details">
-                                <h4>Adresse</h4>
-                                <p>Église de Dieu du Plein Évangile – TInga</p>
-                                <a href="https://maps.app.goo.gl/XgheQXYZRqQiHco29" target="_blank" style="color: var(--color-gold-elegant);">Voir sur Google Maps →</a>
+                                <h4 data-i18n="contact.info_address">Adresse</h4>
+                                <p data-i18n="contact.info_address_value">Église de Dieu du Plein Évangile – Togo</p>
+                                <a href="https://maps.app.goo.gl/XgheQXYZRqQiHco29" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold-elegant);" data-i18n="contact.btn_maps">Voir sur Google Maps →</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Google Maps -->
                     <div style="text-align: center; margin-top: var(--spacing-lg);">
-                        <a href="https://maps.app.goo.gl/XgheQXYZRqQiHco29" target="_blank" class="btn btn-primary" aria-label="Voir l'adresse sur Google Maps">Voir sur Google Maps →</a>
+                        <a href="https://maps.app.goo.gl/XgheQXYZRqQiHco29" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Voir l'adresse sur Google Maps" data-i18n="contact.btn_maps">Voir sur Google Maps →</a>
                     </div>
 
                     <!-- Réseaux sociaux -->
                     <div style="margin-top: var(--spacing-xl);">
-                        <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--color-violet-deep); margin-bottom: var(--spacing-md);">Suivez-nous</h3>
+                        <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--color-violet-deep); margin-bottom: var(--spacing-md);" data-i18n="contact.social_title">Suivez-nous</h3>
                         <div class="footer-socials" style="justify-content: flex-start;">
-                            <a href="https://www.instagram.com/winterfesttogo?igsh=aWJmdjFvMXNxOGRn" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur Instagram" title="Instagram Winterfest Togo">
+                            <a href="https://www.instagram.com/winterfesttogo?igsh=aWJmdjFvMXNxOGRn" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur Instagram" title="Instagram Winterfest Togo">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                             </a>
-                            <a href="https://web.facebook.com/profile.php?id=61590527503529&mibextid=wwXIfr&rdid=UuOeQzGoUHE7vWEY&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BM2p1goLy%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur Facebook" title="Facebook Winterfest Togo">
+                            <a href="https://web.facebook.com/profile.php?id=61590527503529&mibextid=wwXIfr&rdid=UuOeQzGoUHE7vWEY&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BM2p1goLy%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur Facebook" title="Facebook Winterfest Togo">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             </a>
-                            <a href="https://www.tiktok.com/@winterfesttogo?_r=1&_t=ZN-97Hk8oP0XDS" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur TikTok" title="TikTok Winterfest Togo">
+                            <a href="https://www.tiktok.com/@winterfesttogo?_r=1&_t=ZN-97Hk8oP0XDS" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur TikTok" title="TikTok Winterfest Togo">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
                             </a>
-                            <a href="https://www.whatsapp.com/channel/0029VbCle79CxoB3fJRZnY22" class="footer-social-link" target="_blank" aria-label="Rejoindre Winterfest sur WhatsApp" title="WhatsApp Winterfest Togo">
+                            <a href="https://www.whatsapp.com/channel/0029VbCle79CxoB3fJRZnY22" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Rejoindre Winterfest sur WhatsApp" title="WhatsApp Winterfest Togo">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCDrGuLS5Hu5dmoA7TVClkJA" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur YouTube" title="YouTube Winterfest Togo">
+                            <a href="https://www.youtube.com/channel/UCDrGuLS5Hu5dmoA7TVClkJA" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur YouTube" title="YouTube Winterfest Togo">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                             </a>
                         </div>
@@ -225,60 +267,60 @@
     <!-- FAQ -->
     <section class="section" style="background: var(--color-white-off);">
         <div class="container">
-            <h2 class="section-title">Questions fréquentes</h2>
+            <h2 class="section-title" data-i18n="contact.faq_title">Questions fréquentes</h2>
             <div class="accordion">
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Comment s'inscrire à WinterFest ?
+                        <span data-i18n="contact.faq_q1">Comment s'inscrire à WinterFest ?</span>
                         <i data-lucide="chevron-down" class="accordion-icon"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            L'inscription se fait via le formulaire Google Forms disponible sur la page Édition 2026. C'est gratuit mais obligatoire pour réserver votre place.
+                            <span data-i18n="contact.faq_a1">L'inscription se fait via le formulaire Google Forms disponible sur la page Édition 2026. C'est gratuit mais obligatoire pour réserver votre place.</span>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        L'entrée est-elle vraiment gratuite ?
+                        <span data-i18n="contact.faq_q2">L'entrée est-elle vraiment gratuite ?</span>
                         <i data-lucide="chevron-down" class="accordion-icon"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Oui, l'entrée est entièrement gratuite. WinterFest est un don de l'Église de Dieu du Plein Évangile – Togo à la jeunesse togolaise.
+                            <span data-i18n="contact.faq_a2">Oui, l'entrée est entièrement gratuite. WinterFest est un don de l'Église de Dieu du Plein Évangile – Togo à la jeunesse togolaise.</span>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Puis-je venir avec des amis ?
+                        <span data-i18n="contact.faq_q3">Puis-je venir avec des amis ?</span>
                         <i data-lucide="chevron-down" class="accordion-icon"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Absolument ! Plus nous serons nombreux, plus l'expérience sera puissante. Invitez vos amis à s'inscrire également.
+                            <span data-i18n="contact.faq_a3">Absolument ! Plus nous serons nombreux, plus l'expérience sera puissante. Invitez vos amis à s'inscrire également.</span>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Comment devenir bénévole ?
+                        <span data-i18n="contact.faq_q4">Comment devenir bénévole ?</span>
                         <i data-lucide="chevron-down" class="accordion-icon"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Vous pouvez rejoindre l'équipe de bénévoles en remplissant la formulaire sur la page Bénévoles. Plusieurs services sont disponibles.
+                            <span data-i18n="contact.faq_a4">Vous pouvez rejoindre l'équipe de bénévoles en remplissant la formulaire sur la page Bénévoles. Plusieurs services sont disponibles.</span>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Y a-t-il un âge minimum ?
+                        <span data-i18n="contact.faq_q5">Y a-t-il un âge minimum ?</span>
                         <i data-lucide="chevron-down" class="accordion-icon"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            WinterFest est ouvert à tous à partir de 16 ans. Les mineurs doivent être accompagnés d'un adulte.
+                            <span data-i18n="contact.faq_a5">WinterFest est ouvert à tous à partir de 16 ans. Les mineurs doivent être accompagnés d'un adulte.</span>
                         </div>
                     </div>
                 </div>
@@ -291,23 +333,23 @@
         <div class="container">
             <div class="footer-content">
                 <img src="images/logo.png" alt="Winterfest Togo 2026 - Logo du festival chrétien" class="footer-logo" width="200" height="50">
-                <p class="footer-tagline">Une génération debout pour Jésus</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Une génération debout pour Jésus</p>
             </div>
             
             <div class="footer-socials">
-                <a href="https://www.instagram.com/winterfesttogo?igsh=aWJmdjFvMXNxOGRn" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur Instagram" title="Instagram Winterfest Togo">
+                <a href="https://www.instagram.com/winterfesttogo?igsh=aWJmdjFvMXNxOGRn" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur Instagram" title="Instagram Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
-                <a href="https://web.facebook.com/profile.php?id=61590527503529&mibextid=wwXIfr&rdid=UuOeQzGoUHE7vWEY&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BM2p1goLy%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur Facebook" title="Facebook Winterfest Togo">
+                <a href="https://web.facebook.com/profile.php?id=61590527503529&mibextid=wwXIfr&rdid=UuOeQzGoUHE7vWEY&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BM2p1goLy%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur Facebook" title="Facebook Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="https://www.tiktok.com/@winterfesttogo?_r=1&_t=ZN-97Hk8oP0XDS" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur TikTok" title="TikTok Winterfest Togo">
+                <a href="https://www.tiktok.com/@winterfesttogo?_r=1&_t=ZN-97Hk8oP0XDS" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur TikTok" title="TikTok Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
                 </a>
-                <a href="https://www.whatsapp.com/channel/0029VbCle79CxoB3fJRZnY22" class="footer-social-link" target="_blank" aria-label="Rejoindre Winterfest sur WhatsApp" title="WhatsApp Winterfest Togo">
+                <a href="https://www.whatsapp.com/channel/0029VbCle79CxoB3fJRZnY22" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Rejoindre Winterfest sur WhatsApp" title="WhatsApp Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 </a>
-                <a href="https://www.youtube.com/channel/UCDrGuLS5Hu5dmoA7TVClkJA" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur YouTube" title="YouTube Winterfest Togo">
+                <a href="https://www.youtube.com/channel/UCDrGuLS5Hu5dmoA7TVClkJA" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur YouTube" title="YouTube Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
             </div>
@@ -316,16 +358,17 @@
 
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
-                    <p>© 2026 Winterfest Togo — Tous droits réservés <hr> Designed & Developed by <span class="designer-name">Dev AMANKWAAH</span></p>
+                    <p><span data-i18n="footer.copyright">© 2026 Winterfest Togo — Tous droits réservés</span> <hr> <span data-i18n="footer.developed_by">Designed & Developed by</span> <span class="designer-name" data-i18n="footer.developer">Dev AMANKWAAH</span></p>
                 </div>
                 <div class="footer-bottom-right">
-                    <p>Organisé par l'Église de Dieu du Plein Évangile – Togo</p>
+                    <p data-i18n="footer.organized_by">Organisé par l'Église de Dieu du Plein Évangile – Togo</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
 </body>
 </html>

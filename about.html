@@ -17,6 +17,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="WinterFest Togo">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="fr" href="https://winterfesttogo.vercel.app/about.html">
+    <link rel="alternate" hreflang="en" href="https://winterfesttogo.vercel.app/about.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://winterfesttogo.vercel.app/about.html">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +33,6 @@
     <link rel="icon" type="image/png" href="images/logo1.png" sizes="32x32">
     <link rel="icon" type="image/png" href="images/logo.png" sizes="192x192">
     <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#24113D">
     <title>À propos - WinterFest Togo</title>
     <link rel="stylesheet" href="css/style.css">
@@ -35,7 +40,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-violet-deep);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .skip-to-content:focus {
+            top: 0;
+        }
+        *:focus-visible {
+            outline: 3px solid var(--color-gold-elegant);
+            outline-offset: 2px;
+        }
+    </style>
     
     <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
@@ -78,35 +104,40 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content" data-i18n="a11y.skip_to_content">Aller au contenu principal</a>
+    
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <img src="images/logo.png" alt="Winterfest Togo 2026 - Logo du festival chrétien" class="logo" width="200" height="50">
             <nav class="nav">
-                <button class="nav-toggle" aria-label="Menu">
+                <button class="nav-toggle" aria-label="Menu" data-i18n="nav.menu" data-i18n-aria="true">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="about.html" class="nav-link active">À propos</a></li>
-                    <li><a href="gallery.html" class="nav-link">Galerie</a></li>
-                    <li><a href="event.html" class="nav-link">Édition 2026</a></li>
-                    <li><a href="news.html" class="nav-link">Actualités</a></li>
-                    <li><a href="testimonies.html" class="nav-link">Témoignages</a></li>
-                    <li><a href="volunteer.html" class="nav-link">Bénévoles</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link active" data-i18n="nav.about">À propos</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Galerie</a></li>
+                    <li><a href="event.html" class="nav-link" data-i18n="nav.event">Édition 2026</a></li>
+                    <li><a href="testimonies.html" class="nav-link" data-i18n="nav.testimonies">Témoignages</a></li>
+                    <li><a href="volunteer.html" class="nav-link" data-i18n="nav.volunteer">Bénévoles</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                    <li class="language-switcher">
+                        <button class="lang-btn active" data-lang="fr" data-i18n="language_switcher.fr">🇫🇷 FR</button>
+                        <button class="lang-btn" data-lang="en" data-i18n="language_switcher.en">🇺🇸 EN</button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero" id="main-content">
         <div class="container">
-            <h1 class="page-hero-title">À propos de WinterFest</h1>
-            <p class="page-hero-subtitle">Découvrez notre histoire, notre vision et notre équipe</p>
+            <h1 class="page-hero-title" data-i18n="about.page_title">À propos de WinterFest</h1>
+            <p class="page-hero-subtitle" data-i18n="about.page_subtitle">Découvrez notre histoire, notre vision et notre équipe</p>
         </div>
     </section>
 
@@ -114,21 +145,21 @@
     <div class="container">
         <nav class="breadcrumb">
             <div class="breadcrumb-item">
-                <a href="index.html">Accueil</a>
+                <a href="index.html" data-i18n="about.breadcrumb_home">Accueil</a>
                 <span class="breadcrumb-separator">/</span>
             </div>
-            <div class="breadcrumb-item active">À propos</div>
+            <div class="breadcrumb-item active" data-i18n="about.breadcrumb_current">À propos</div>
         </nav>
     </div>
 
     <!-- L'origine de WinterFest -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">L'origine de WinterFest</h2>
+            <h2 class="section-title" data-i18n="about.origin_title">L'origine de WinterFest</h2>
             <div class="about-content">
-                <p>WinterFest est né d'une vision simple mais puissante : créer un espace où la jeunesse peut rencontrer Dieu de manière authentique et transformative.</p>
-                <p>Initié par Randall Paris, WinterFest a commencé comme un rassemblement local avant de devenir un mouvement international qui touche des milliers de jeunes à travers le monde.</p>
-                <p>Au Togo, WinterFest est bien plus qu'un événement. C'est un mouvement qui inspire une génération à se lever pour sa foi, à s'engager pour son pays et à vivre pleinement son appel en Christ.</p>
+                <p data-i18n="about.origin_p1">WinterFest est né d'une vision simple mais puissante : créer un espace où la jeunesse peut rencontrer Dieu de manière authentique et transformative.</p>
+                <p data-i18n="about.origin_p2">Initié par Randall Paris, WinterFest a commencé comme un rassemblement local avant de devenir un mouvement international qui touche des milliers de jeunes à travers le monde.</p>
+                <p data-i18n="about.origin_p3">Au Togo, WinterFest est bien plus qu'un événement. C'est un mouvement qui inspire une génération à se lever pour sa foi, à s'engager pour son pays et à vivre pleinement son appel en Christ.</p>
             </div>
         </div>
     </section>
@@ -136,11 +167,11 @@
     <!-- La vision internationale -->
     <section class="section" style="background: linear-gradient(135deg, var(--color-violet-deep), var(--color-black-premium)); color: var(--color-white);">
         <div class="container">
-            <h2 class="section-title" style="color: var(--color-gold-elegant);">La vision internationale</h2>
+            <h2 class="section-title" style="color: var(--color-gold-elegant);" data-i18n="about.vision_title">La vision internationale</h2>
             <div class="about-content">
-                <p style="color: var(--color-white); opacity: 0.9;">WinterFest porte une vision qui dépasse les frontières. À travers le monde, des milliers de jeunes se rassemblent pour célébrer leur foi, être formés et envoyés pour impacter leur génération.</p>
-                <p style="color: var(--color-white); opacity: 0.9;">Cette vision internationale se manifeste par des événements dans plusieurs pays, une connexion entre les églises et un désir commun de voir la jeunesse s'épanouir dans sa relation avec Dieu.</p>
-                <p style="color: var(--color-white); opacity: 0.9;">WinterFest Togo s'inscrit dans cette vision globale, tout en étant ancré dans la réalité togolaise pour porter un fruit durable dans la nation.</p>
+                <p style="color: var(--color-white); opacity: 0.9;" data-i18n="about.vision_p1">WinterFest porte une vision qui dépasse les frontières. À travers le monde, des milliers de jeunes se rassemblent pour célébrer leur foi, être formés et envoyés pour impacter leur génération.</p>
+                <p style="color: var(--color-white); opacity: 0.9;" data-i18n="about.vision_p2">Cette vision internationale se manifeste par des événements dans plusieurs pays, une connexion entre les églises et un désir commun de voir la jeunesse s'épanouir dans sa relation avec Dieu.</p>
+                <p style="color: var(--color-white); opacity: 0.9;" data-i18n="about.vision_p3">WinterFest Togo s'inscrit dans cette vision globale, tout en étant ancré dans la réalité togolaise pour porter un fruit durable dans la nation.</p>
             </div>
         </div>
     </section>
@@ -148,26 +179,26 @@
     <!-- Interview Randall Paris -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Interview de Randall Paris</h2>
+            <h2 class="section-title" data-i18n="about.interview_title">Interview de Randall Paris</h2>
             <div class="intro-video-wrapper">
                 <div class="placeholder-video">
-                    <div class="placeholder-badge">Bientôt disponible</div>
+                    <div class="placeholder-badge" data-i18n="about.coming_soon">Bientôt disponible</div>
                     <div class="placeholder-play-button"></div>
-                    <p class="placeholder-text">Interview de Randall Paris - bientôt disponible</p>
+                    <p class="placeholder-text" data-i18n="about.interview_text">Interview de Randall Paris - bientôt disponible</p>
                 </div>
             </div>
-            <p class="subsection-text" style="text-align: center; margin-top: var(--spacing-lg);">Découvrez la vision du fondateur de WinterFest.</p>
+            <p class="subsection-text" style="text-align: center; margin-top: var(--spacing-lg);" data-i18n="about.interview_subtitle">Découvrez la vision du fondateur de WinterFest.</p>
         </div>
     </section>
 
     <!-- Pourquoi WinterFest existe -->
     <section class="section" style="background: var(--color-white-off);">
         <div class="container">
-            <h2 class="section-title">Pourquoi WinterFest existe</h2>
+            <h2 class="section-title" data-i18n="about.why_exists_title">Pourquoi WinterFest existe</h2>
             <div class="about-content">
-                <p>WinterFest existe parce que nous croyons que chaque jeune a un destin unique en Dieu. Dans un monde qui offre de nombreuses distractions, nous voulons offrir une alternative : une rencontre authentique avec le Créateur.</p>
-                <p>WinterFest existe pour répondre aux questions de cette génération, pour offrir un espace de guérison, pour former des leaders et pour envoyer des jeunes transformés dans leur famille, leur église et leur société.</p>
-                <p>WinterFest existe parce que la jeunesse n'est pas le futur de l'Église – elle est l'Église d'aujourd'hui.</p>
+                <p data-i18n="about.why_exists_p1">WinterFest existe parce que nous croyons que chaque jeune a un destin unique en Dieu. Dans un monde qui offre de nombreuses distractions, nous voulons offrir une alternative : une rencontre authentique avec le Créateur.</p>
+                <p data-i18n="about.why_exists_p2">WinterFest existe pour répondre aux questions de cette génération, pour offrir un espace de guérison, pour former des leaders et pour envoyer des jeunes transformés dans leur famille, leur église et leur société.</p>
+                <p data-i18n="about.why_exists_p3">WinterFest existe parce que la jeunesse n'est pas le futur de l'Église – elle est l'Église d'aujourd'hui.</p>
             </div>
         </div>
     </section>
@@ -175,11 +206,11 @@
     <!-- Pourquoi WinterFest au Togo -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Pourquoi WinterFest au Togo</h2>
+            <h2 class="section-title" data-i18n="about.why_togo_title">Pourquoi WinterFest au Togo</h2>
             <div class="about-content">
-                <p>Le Togo est une nation jeune, avec une population dynamique et pleine de potentiel. WinterFest au Togo répond à un besoin criant : offrir à cette jeunesse un espace où elle peut rencontrer Dieu, être formée et envoyée.</p>
-                <p>WinterFest Togo existe pour impacter la nation togolaise par sa jeunesse. Nous croyons que lorsque les jeunes sont transformés, c'est toute la nation qui est transformée.</p>
-                <p>WinterFest au Togo, c'est aussi un pont entre la vision internationale et la réalité locale, une adaptation culturelle qui touche le cœur des jeunes togolais.</p>
+                <p data-i18n="about.why_togo_p1">Le Togo est une nation jeune, avec une population dynamique et pleine de potentiel. WinterFest au Togo répond à un besoin criant : offrir à cette jeunesse un espace où elle peut rencontrer Dieu, être formée et envoyée.</p>
+                <p data-i18n="about.why_togo_p2">WinterFest Togo existe pour impacter la nation togolaise par sa jeunesse. Nous croyons que lorsque les jeunes sont transformés, c'est toute la nation qui est transformée.</p>
+                <p data-i18n="about.why_togo_p3">WinterFest au Togo, c'est aussi un pont entre la vision internationale et la réalité locale, une adaptation culturelle qui touche le cœur des jeunes togolais.</p>
             </div>
         </div>
     </section>
@@ -187,11 +218,11 @@
     <!-- Vision WinterFest Togo -->
     <section class="section" style="background: linear-gradient(135deg, var(--color-violet-deep), var(--color-black-premium)); color: var(--color-white);">
         <div class="container">
-            <h2 class="section-title" style="color: var(--color-gold-elegant);">Vision de WinterFest Togo</h2>
+            <h2 class="section-title" style="color: var(--color-gold-elegant);" data-i18n="about.togo_vision_title">Vision de WinterFest Togo</h2>
             <div class="about-content">
-                <p style="color: var(--color-white); opacity: 0.9;">Notre vision pour WinterFest Togo est de voir une génération de jeunes debout pour Jésus, engagés dans leurs églises, impactant leurs communautés et portant un fruit durable dans la nation.</p>
-                <p style="color: var(--color-white); opacity: 0.9;">Nous voulons que WinterFest Togo soit un catalyseur de réveil spirituel, un lieu de formation pour les leaders de demain, et un mouvement qui inspire d'autres initiatives similaires à travers le pays.</p>
-                <p style="color: var(--color-white); opacity: 0.9;">Notre vision est que chaque jeune qui participe à WinterFest Togo reparte transformé, équipé et envoyé pour faire une différence éternelle.</p>
+                <p style="color: var(--color-white); opacity: 0.9;" data-i18n="about.togo_vision_p1">Notre vision pour WinterFest Togo est de voir une génération de jeunes debout pour Jésus, engagés dans leurs églises, impactant leurs communautés et portant un fruit durable dans la nation.</p>
+                <p style="color: var(--color-white); opacity: 0.9;" data-i18n="about.togo_vision_p2">Nous voulons que WinterFest Togo soit un catalyseur de réveil spirituel, un lieu de formation pour les leaders de demain, et un mouvement qui inspire d'autres initiatives similaires à travers le pays.</p>
+                <p style="color: var(--color-white); opacity: 0.9;" data-i18n="about.togo_vision_p3">Notre vision est que chaque jeune qui participe à WinterFest Togo reparte transformé, équipé et envoyé pour faire une différence éternelle.</p>
             </div>
         </div>
     </section>
@@ -199,38 +230,38 @@
     <!-- Interview responsable togolais -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Interview du responsable togolais</h2>
+            <h2 class="section-title" data-i18n="about.interview_togo_title">Interview du responsable togolais</h2>
             <div class="intro-video-wrapper">
                 <div class="placeholder-video">
-                    <div class="placeholder-badge">Bientôt disponible</div>
+                    <div class="placeholder-badge" data-i18n="about.coming_soon">Bientôt disponible</div>
                     <div class="placeholder-play-button"></div>
-                    <p class="placeholder-text">Interview du responsable togolais - bientôt disponible</p>
+                    <p class="placeholder-text" data-i18n="about.interview_togo_text">Interview du responsable togolais - bientôt disponible</p>
                 </div>
             </div>
-            <p class="subsection-text" style="text-align: center; margin-top: var(--spacing-lg);">Le cœur de WinterFest Togo partagé par son responsable.</p>
+            <p class="subsection-text" style="text-align: center; margin-top: var(--spacing-lg);" data-i18n="about.interview_togo_subtitle">Le cœur de WinterFest Togo partagé par son responsable.</p>
         </div>
     </section>
 
     <!-- Les valeurs -->
     <section class="section" style="background: var(--color-white-off);">
         <div class="container">
-            <h2 class="section-title">Nos valeurs</h2>
+            <h2 class="section-title" data-i18n="about.values_title">Nos valeurs</h2>
             <div class="team-grid" style="margin-top: var(--spacing-lg);">
                 <div class="card">
-                    <h3 class="card-title">Excellence</h3>
-                    <p class="card-content">Nous nous engageons à tout faire avec excellence, pour la gloire de Dieu.</p>
+                    <h3 class="card-title" data-i18n="about.value_excellence">Excellence</h3>
+                    <p class="card-content" data-i18n="about.value_excellence_desc">Nous nous engageons à tout faire avec excellence, pour la gloire de Dieu.</p>
                 </div>
                 <div class="card">
-                    <h3 class="card-title">Authenticité</h3>
-                    <p class="card-content">Nous valorisons une relation authentique avec Dieu et les uns avec les autres.</p>
+                    <h3 class="card-title" data-i18n="about.value_authenticity">Authenticité</h3>
+                    <p class="card-content" data-i18n="about.value_authenticity_desc">Nous valorisons une relation authentique avec Dieu et les uns avec les autres.</p>
                 </div>
                 <div class="card">
-                    <h3 class="card-title">Communauté</h3>
-                    <p class="card-content">Nous croyons en la force de la communauté et du soutien mutuel.</p>
+                    <h3 class="card-title" data-i18n="about.value_community">Communauté</h3>
+                    <p class="card-content" data-i18n="about.value_community_desc">Nous croyons en la force de la communauté et du soutien mutuel.</p>
                 </div>
                 <div class="card">
-                    <h3 class="card-title">Transformation</h3>
-                    <p class="card-content">Nous cherchons la transformation personnelle et collective par la Parole de Dieu.</p>
+                    <h3 class="card-title" data-i18n="about.value_transformation">Transformation</h3>
+                    <p class="card-content" data-i18n="about.value_transformation_desc">Nous cherchons la transformation personnelle et collective par la Parole de Dieu.</p>
                 </div>
             </div>
         </div>
@@ -239,28 +270,28 @@
     <!-- Les objectifs -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Nos objectifs</h2>
+            <h2 class="section-title" data-i18n="about.objectives_title">Nos objectifs</h2>
             <div class="about-content" style="max-width: 800px;">
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: var(--spacing-md); padding-left: 2rem; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-gold-elegant); font-size: 1.5rem;">✓</span>
-                        Former et équiper la jeunesse togolaise pour son appel en Christ
+                        <span data-i18n="about.objective_1">Former et équiper la jeunesse togolaise pour son appel en Christ</span>
                     </li>
                     <li style="margin-bottom: var(--spacing-md); padding-left: 2rem; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-gold-elegant); font-size: 1.5rem;">✓</span>
-                        Créer des espaces de rencontre authentique avec Dieu
+                        <span data-i18n="about.objective_2">Créer des espaces de rencontre authentique avec Dieu</span>
                     </li>
                     <li style="margin-bottom: var(--spacing-md); padding-left: 2rem; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-gold-elegant); font-size: 1.5rem;">✓</span>
-                        Inspirer une génération à vivre sa foi avec audace
+                        <span data-i18n="about.objective_3">Inspirer une génération à vivre sa foi avec audace</span>
                     </li>
                     <li style="margin-bottom: var(--spacing-md); padding-left: 2rem; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-gold-elegant); font-size: 1.5rem;">✓</span>
-                        Connecter les jeunes entre eux et avec les églises locales
+                        <span data-i18n="about.objective_4">Connecter les jeunes entre eux et avec les églises locales</span>
                     </li>
                     <li style="margin-bottom: var(--spacing-md); padding-left: 2rem; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-gold-elegant); font-size: 1.5rem;">✓</span>
-                        Impacter la société togolaise par des jeunes transformés
+                        <span data-i18n="about.objective_5">Impacter la société togolaise par des jeunes transformés</span>
                     </li>
                 </ul>
             </div>
@@ -270,31 +301,47 @@
     <!-- Notre équipe -->
     <section class="section" style="background: var(--color-white-off);">
         <div class="container">
-            <h2 class="section-title">Notre équipe</h2>
+            <h2 class="section-title" data-i18n="about.team_title">Notre équipe</h2>
             <div class="team-grid" style="margin-top: var(--spacing-lg);">
-                <div class="team-card">
-                    <img src="images/logo.png" alt="Membre équipe" class="team-photo">
-                    <h3 class="team-name">Équipe Leadership</h3>
-                    <p class="team-role">Direction</p>
-                    <p class="team-bio">Une équipe dévouée à la vision de WinterFest Togo.</p>
+                <div class="card">
+                    <div class="card-image-placeholder" style="background: linear-gradient(135deg, var(--color-violet-deep), var(--color-black-premium)); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: var(--color-gold-elegant); font-size: 3rem;">👥</span>
+                    </div>
+                    <div style="padding: var(--spacing-md);">
+                        <h3 class="card-title" data-i18n="about.team_leadership_name">Équipe Leadership</h3>
+                        <p class="card-content" style="color: var(--color-gold-elegant); font-weight: 500;" data-i18n="about.team_leadership_role">Direction</p>
+                        <p class="card-content" data-i18n="about.team_leadership_bio">Une équipe dévouée à la vision de WinterFest Togo.</p>
+                    </div>
                 </div>
-                <div class="team-card">
-                    <img src="images/logo.png" alt="Membre équipe" class="team-photo">
-                    <h3 class="team-name">Équipe Louange</h3>
-                    <p class="team-role">Musique & Adoration</p>
-                    <p class="team-bio">Des musiciens et chanteurs passionnés par la présence de Dieu.</p>
+                <div class="card">
+                    <div class="card-image-placeholder" style="background: linear-gradient(135deg, var(--color-violet-deep), var(--color-black-premium)); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: var(--color-gold-elegant); font-size: 3rem;">🎵</span>
+                    </div>
+                    <div style="padding: var(--spacing-md);">
+                        <h3 class="card-title" data-i18n="about.team_worship_name">Équipe Louange</h3>
+                        <p class="card-content" style="color: var(--color-gold-elegant); font-weight: 500;" data-i18n="about.team_worship_role">Musique & Adoration</p>
+                        <p class="card-content" data-i18n="about.team_worship_bio">Des musiciens et chanteurs passionnés par la présence de Dieu.</p>
+                    </div>
                 </div>
-                <div class="team-card">
-                    <img src="images/logo.png" alt="Membre équipe" class="team-photo">
-                    <h3 class="team-name">Équipe Logistique</h3>
-                    <p class="team-role">Organisation</p>
-                    <p class="team-bio">Des organisateurs qui veillent au bon déroulement de l'événement.</p>
+                <div class="card">
+                    <div class="card-image-placeholder" style="background: linear-gradient(135deg, var(--color-violet-deep), var(--color-black-premium)); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: var(--color-gold-elegant); font-size: 3rem;">📦</span>
+                    </div>
+                    <div style="padding: var(--spacing-md);">
+                        <h3 class="card-title" data-i18n="about.team_logistics_name">Équipe Logistique</h3>
+                        <p class="card-content" style="color: var(--color-gold-elegant); font-weight: 500;" data-i18n="about.team_logistics_role">Organisation</p>
+                        <p class="card-content" data-i18n="about.team_logistics_bio">Des organisateurs qui veillent au bon déroulement de l'événement.</p>
+                    </div>
                 </div>
-                <div class="team-card">
-                    <img src="images/logo.png" alt="Membre équipe" class="team-photo">
-                    <h3 class="team-name">Équipe Communication</h3>
-                    <p class="team-role">Média & Marketing</p>
-                    <p class="team-bio">Des créatifs qui communiquent la vision de WinterFest.</p>
+                <div class="card">
+                    <div class="card-image-placeholder" style="background: linear-gradient(135deg, var(--color-violet-deep), var(--color-black-premium)); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: var(--color-gold-elegant); font-size: 3rem;">📢</span>
+                    </div>
+                    <div style="padding: var(--spacing-md);">
+                        <h3 class="card-title" data-i18n="about.team_communication_name">Équipe Communication</h3>
+                        <p class="card-content" style="color: var(--color-gold-elegant); font-weight: 500;" data-i18n="about.team_communication_role">Média & Marketing</p>
+                        <p class="card-content" data-i18n="about.team_communication_bio">Des créatifs qui communiquent la vision de WinterFest.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -305,23 +352,23 @@
         <div class="container">
             <div class="footer-content">
                 <img src="images/logo.png" alt="Winterfest Togo 2026 - Logo du festival chrétien" class="footer-logo" width="200" height="50">
-                <p class="footer-tagline">Une génération debout pour Jésus</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Une génération debout pour Jésus</p>
             </div>
             
             <div class="footer-socials">
-                <a href="https://www.instagram.com/winterfesttogo?igsh=aWJmdjFvMXNxOGRn" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur Instagram" title="Instagram Winterfest Togo">
+                <a href="https://www.instagram.com/winterfesttogo?igsh=aWJmdjFvMXNxOGRn" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur Instagram" title="Instagram Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
-                <a href="https://web.facebook.com/profile.php?id=61590527503529&mibextid=wwXIfr&rdid=UuOeQzGoUHE7vWEY&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BM2p1goLy%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur Facebook" title="Facebook Winterfest Togo">
+                <a href="https://web.facebook.com/profile.php?id=61590527503529&mibextid=wwXIfr&rdid=UuOeQzGoUHE7vWEY&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BM2p1goLy%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur Facebook" title="Facebook Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="https://www.tiktok.com/@winterfesttogo?_r=1&_t=ZN-97Hk8oP0XDS" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur TikTok" title="TikTok Winterfest Togo">
+                <a href="https://www.tiktok.com/@winterfesttogo?_r=1&_t=ZN-97Hk8oP0XDS" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur TikTok" title="TikTok Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
                 </a>
-                <a href="https://www.whatsapp.com/channel/0029VbCle79CxoB3fJRZnY22" class="footer-social-link" target="_blank" aria-label="Rejoindre Winterfest sur WhatsApp" title="WhatsApp Winterfest Togo">
+                <a href="https://www.whatsapp.com/channel/0029VbCle79CxoB3fJRZnY22" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Rejoindre Winterfest sur WhatsApp" title="WhatsApp Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 </a>
-                <a href="https://www.youtube.com/channel/UCDrGuLS5Hu5dmoA7TVClkJA" class="footer-social-link" target="_blank" aria-label="Suivre Winterfest sur YouTube" title="YouTube Winterfest Togo">
+                <a href="https://www.youtube.com/channel/UCDrGuLS5Hu5dmoA7TVClkJA" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Suivre Winterfest sur YouTube" title="YouTube Winterfest Togo">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
             </div>
@@ -330,15 +377,16 @@
 
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
-                    <p>© 2026 Winterfest Togo — Tous droits réservés <hr> Designed & Developed by <span class="designer-name">Dev AMANKWAAH</span></p>
+                    <p><span data-i18n="footer.copyright">© 2026 Winterfest Togo — Tous droits réservés</span> <hr> <span data-i18n="footer.developed_by">Designed & Developed by</span> <span class="designer-name" data-i18n="footer.developer">Dev AMANKWAAH</span></p>
                 </div>
                 <div class="footer-bottom-right">
-                    <p>Organisé par l'Église de Dieu du Plein Évangile – Togo</p>
+                    <p data-i18n="footer.organized_by">Organisé par l'Église de Dieu du Plein Évangile – Togo</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

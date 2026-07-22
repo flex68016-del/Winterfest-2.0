@@ -1,62 +1,112 @@
 [
     {
-        "id": 1,
-        "title": "WinterFest 2026 : Les inscriptions sont ouvertes !",
-        "excerpt": "Réservez dès maintenant votre place pour l'édition 2026 de WinterFest Togo. L'entrée est gratuite mais l'inscription est obligatoire.",
-        "content": "Nous sommes ravis d'annoncer l'ouverture des inscriptions pour WinterFest Togo 2026 ! Cette année, le thème est 'Debout pour Jésus' et nous nous attendons à une participation record. L'inscription est simple et rapide via notre formulaire Google Forms. N'attendez pas pour réserver votre place !",
-        "image": "images/affiche-officielle.jpg",
-        "category": "Annonce",
-        "date": "2026-01-15",
-        "author": "Équipe WinterFest"
-    },
-    {
         "id": 2,
-        "title": "Découvrez le thème de l'édition 2026 : Debout pour Jésus",
-        "excerpt": "Le thème de cette année est un appel à se lever pour sa foi, sa génération et sa vie. Découvrez la vision derrière ce thème puissant.",
-        "content": "'Debout pour Jésus' n'est pas juste un slogan, c'est un appel à l'action. Dans un monde qui pousse à la conformité, nous choisissons de nous lever. Cette édition sera marquée par des enseignements puissants sur ce que signifie vraiment être debout pour Christ dans notre contexte actuel.",
+        "title": {
+            "fr": "Découvrez le thème de l'édition 2026 : Debout pour Jésus",
+            "en": "Discover the 2026 edition theme: Standing for Jesus"
+        },
+        "excerpt": {
+            "fr": "Le thème de cette année est un appel à se lever pour sa foi, sa génération et sa vie. Découvrez la vision derrière ce thème puissant.",
+            "en": "This year's theme is a call to stand up for your faith, your generation and your life. Discover the vision behind this powerful theme."
+        },
+        "content": {
+            "fr": "'Debout pour Jésus' n'est pas juste un slogan, c'est un appel à l'action. Dans un monde qui pousse à la conformité, nous choisissons de nous lever. Cette édition sera marquée par des enseignements puissants sur ce que signifie vraiment être debout pour Christ dans notre contexte actuel.",
+            "en": "'Standing for Jesus' is not just a slogan, it's a call to action. In a world that pushes for conformity, we choose to stand up. This edition will be marked by powerful teachings on what it truly means to stand for Christ in our current context."
+        },
         "image": "images/aff1.png",
-        "category": "Thème",
+        "category": {
+            "fr": "Thème",
+            "en": "Theme"
+        },
         "date": "2026-01-10",
-        "author": "Équipe WinterFest"
+        "author": "WinterFest Togo"
     },
     {
         "id": 3,
-        "title": "Eric Assk sera de retour pour WinterFest 2026",
-        "excerpt": "L'artiste Eric Assk confirme sa présence pour l'édition 2026. Préparez-vous pour des moments de louange inoubliables !",
-        "content": "Après avoir marqué les éditions précédentes, Eric Assk revient pour WinterFest 2026 ! Sa passion pour Dieu et son talent musical créeront une atmosphère unique de louange et d'adoration. Ne manquez pas ses performances exclusives lors des trois soirées de l'événement.",
+        "title": {
+            "fr": "Eric Assk sera de retour pour WinterFest 2026",
+            "en": "Eric Assk returns for WinterFest 2026"
+        },
+        "excerpt": {
+            "fr": "L'artiste Eric Assk confirme sa présence pour l'édition 2026. Préparez-vous pour des moments de louange inoubliables !",
+            "en": "Artist Eric Assk confirms his presence for the 2026 edition. Get ready for unforgettable praise moments!"
+        },
+        "content": {
+            "fr": "Après avoir marqué les éditions précédentes, Eric Assk revient pour WinterFest 2026 ! Sa passion pour Dieu et son talent musical créeront une atmosphère unique de louange et d'adoration. Ne manquez pas ses performances exclusives lors des trois soirées de l'événement.",
+            "en": "After marking previous editions, Eric Assk returns for WinterFest 2026! His passion for God and musical talent will create a unique atmosphere of praise and worship. Don't miss his exclusive performances during the three evenings of the event."
+        },
         "image": "images/affiche-officielle.jpg",
-        "category": "Invités",
+        "category": {
+            "fr": "Invités",
+            "en": "Guests"
+        },
         "date": "2026-01-05",
-        "author": "Équipe WinterFest"
+        "author": "WinterFest Togo"
     },
     {
         "id": 4,
-        "title": "Flashback WinterFest 2025 : Les moments forts",
-        "excerpt": "Revivez les meilleurs moments de l'édition 2025 à travers notre vidéo compilation. Louange, enseignements et transformations.",
-        "content": "L'édition 2025 a été un temps extraordinaire de rencontre avec Dieu. Des milliers de jeunes ont été touchés, transformés et envoyés. Cette vidéo compilation vous permet de revivre les moments forts : temps de louange puissants, enseignements impactants et témoignages de vies changées.",
+        "title": {
+            "fr": "Flashback WinterFest 2025 : Les moments forts",
+            "en": "WinterFest 2025 Flashback: Highlights"
+        },
+        "excerpt": {
+            "fr": "Revivez les meilleurs moments de l'édition 2025 à travers notre vidéo compilation. Louange, enseignements et transformations.",
+            "en": "Relive the best moments of the 2025 edition through our video compilation. Praise, teachings and transformations."
+        },
+        "content": {
+            "fr": "L'édition 2025 a été un temps extraordinaire de rencontre avec Dieu. Des milliers de jeunes ont été touchés, transformés et envoyés. Cette vidéo compilation vous permet de revivre les moments forts : temps de louange puissants, enseignements impactants et témoignages de vies changées.",
+            "en": "The 2025 edition was an extraordinary time of encountering God. Thousands of young people were touched, transformed and sent. This video compilation allows you to relive the highlights: powerful praise times, impactful teachings and testimonies of changed lives."
+        },
         "image": "images/aff1.png",
-        "category": "Flashback",
+        "category": {
+            "fr": "Flashback",
+            "en": "Flashback"
+        },
         "date": "2025-12-20",
-        "author": "Équipe WinterFest"
+        "author": "WinterFest Togo"
     },
     {
         "id": 5,
-        "title": "Devenez bénévole pour WinterFest 2026",
-        "excerpt": "Rejoignez l'équipe de bénévoles et contribuez à faire de cette édition un succès. Plusieurs services sont disponibles.",
-        "content": "WinterFest ne pourrait pas exister sans ses bénévoles dévoués. Nous recherchons des personnes passionnées pour servir dans différents domaines : accueil, logistique, technique, communication, chorale, prière et sécurité. Si vous avez envie de servir et de contribuer à l'avancement du royaume, rejoignez-nous !",
+        "title": {
+            "fr": "Devenez bénévole pour WinterFest 2026",
+            "en": "Become a volunteer for WinterFest 2026"
+        },
+        "excerpt": {
+            "fr": "Rejoignez l'équipe de bénévoles et contribuez à faire de cette édition un succès. Plusieurs services sont disponibles.",
+            "en": "Join the volunteer team and help make this edition a success. Several services are available."
+        },
+        "content": {
+            "fr": "WinterFest ne pourrait pas exister sans ses bénévoles dévoués. Nous recherchons des personnes passionnées pour servir dans différents domaines : accueil, logistique, technique, communication, chorale, prière et sécurité. Si vous avez envie de servir et de contribuer à l'avancement du royaume, rejoignez-nous !",
+            "en": "WinterFest could not exist without its dedicated volunteers. We are looking for passionate people to serve in different areas: welcome, logistics, technical, communication, choir, prayer and security. If you want to serve and contribute to the advancement of the kingdom, join us!"
+        },
         "image": "images/affiche-officielle.jpg",
-        "category": "Bénévolat",
+        "category": {
+            "fr": "Bénévolat",
+            "en": "Volunteering"
+        },
         "date": "2025-12-15",
-        "author": "Équipe WinterFest"
+        "author": "WinterFest Togo"
     },
     {
         "id": 6,
-        "title": "Le Palais des Congrès de Lomé confirmé comme lieu",
-        "excerpt": "WinterFest 2026 se tiendra au Palais des Congrès de Lomé. Un lieu prestigieux pour un événement d'envergure.",
-        "content": "Nous avons le plaisir de confirmer que WinterFest 2026 se déroulera au Palais des Congrès de Lomé. Ce lieu prestigieux offre l'espace et les installations nécessaires pour accueillir les milliers de participants attendus. Sa localisation centrale facilitera l'accès pour tous.",
+        "title": {
+            "fr": "Le Palais des Congrès de Lomé confirmé comme lieu",
+            "en": "Palais des Congrès de Lomé confirmed as venue"
+        },
+        "excerpt": {
+            "fr": "WinterFest 2026 se tiendra au Palais des Congrès de Lomé. Un lieu prestigieux pour un événement d'envergure.",
+            "en": "WinterFest 2026 will be held at the Palais des Congrès in Lomé. A prestigious venue for a large-scale event."
+        },
+        "content": {
+            "fr": "Nous avons le plaisir de confirmer que WinterFest 2026 se déroulera au Palais des Congrès de Lomé. Ce lieu prestigieux offre l'espace et les installations nécessaires pour accueillir les milliers de participants attendus. Sa localisation centrale facilitera l'accès pour tous.",
+            "en": "We are pleased to confirm that WinterFest 2026 will take place at the Palais des Congrès in Lomé. This prestigious venue offers the space and facilities necessary to accommodate the thousands of expected participants. Its central location will facilitate access for all."
+        },
         "image": "images/aff1.png",
-        "category": "Logistique",
+        "category": {
+            "fr": "Logistique",
+            "en": "Logistics"
+        },
         "date": "2025-12-10",
-        "author": "Équipe WinterFest"
+        "author": "WinterFest Togo"
     }
 ]
