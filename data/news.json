@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "WinterFest 2026 : Les inscriptions sont ouvertes !",
+        "excerpt": "Réservez dès maintenant votre place pour l'édition 2026 de WinterFest Togo. L'entrée est gratuite mais l'inscription est obligatoire.",
+        "content": "Nous sommes ravis d'annoncer l'ouverture des inscriptions pour WinterFest Togo 2026 ! Cette année, le thème est 'Debout pour Jésus' et nous nous attendons à une participation record. L'inscription est simple et rapide via notre formulaire Google Forms. N'attendez pas pour réserver votre place !",
+        "image": "images/affiche-officielle.jpg",
+        "category": "Annonce",
+        "date": "2026-01-15",
+        "author": "Équipe WinterFest"
+    },
+    {
+        "id": 2,
+        "title": "Découvrez le thème de l'édition 2026 : Debout pour Jésus",
+        "excerpt": "Le thème de cette année est un appel à se lever pour sa foi, sa génération et sa vie. Découvrez la vision derrière ce thème puissant.",
+        "content": "'Debout pour Jésus' n'est pas juste un slogan, c'est un appel à l'action. Dans un monde qui pousse à la conformité, nous choisissons de nous lever. Cette édition sera marquée par des enseignements puissants sur ce que signifie vraiment être debout pour Christ dans notre contexte actuel.",
+        "image": "images/aff1.png",
+        "category": "Thème",
+        "date": "2026-01-10",
+        "author": "Équipe WinterFest"
+    },
+    {
+        "id": 3,
+        "title": "Eric Assk sera de retour pour WinterFest 2026",
+        "excerpt": "L'artiste Eric Assk confirme sa présence pour l'édition 2026. Préparez-vous pour des moments de louange inoubliables !",
+        "content": "Après avoir marqué les éditions précédentes, Eric Assk revient pour WinterFest 2026 ! Sa passion pour Dieu et son talent musical créeront une atmosphère unique de louange et d'adoration. Ne manquez pas ses performances exclusives lors des trois soirées de l'événement.",
+        "image": "images/affiche-officielle.jpg",
+        "category": "Invités",
+        "date": "2026-01-05",
+        "author": "Équipe WinterFest"
+    },
+    {
+        "id": 4,
+        "title": "Flashback WinterFest 2025 : Les moments forts",
+        "excerpt": "Revivez les meilleurs moments de l'édition 2025 à travers notre vidéo compilation. Louange, enseignements et transformations.",
+        "content": "L'édition 2025 a été un temps extraordinaire de rencontre avec Dieu. Des milliers de jeunes ont été touchés, transformés et envoyés. Cette vidéo compilation vous permet de revivre les moments forts : temps de louange puissants, enseignements impactants et témoignages de vies changées.",
+        "image": "images/aff1.png",
+        "category": "Flashback",
+        "date": "2025-12-20",
+        "author": "Équipe WinterFest"
+    },
+    {
+        "id": 5,
+        "title": "Devenez bénévole pour WinterFest 2026",
+        "excerpt": "Rejoignez l'équipe de bénévoles et contribuez à faire de cette édition un succès. Plusieurs services sont disponibles.",
+        "content": "WinterFest ne pourrait pas exister sans ses bénévoles dévoués. Nous recherchons des personnes passionnées pour servir dans différents domaines : accueil, logistique, technique, communication, chorale, prière et sécurité. Si vous avez envie de servir et de contribuer à l'avancement du royaume, rejoignez-nous !",
+        "image": "images/affiche-officielle.jpg",
+        "category": "Bénévolat",
+        "date": "2025-12-15",
+        "author": "Équipe WinterFest"
+    },
+    {
+        "id": 6,
+        "title": "Le Palais des Congrès de Lomé confirmé comme lieu",
+        "excerpt": "WinterFest 2026 se tiendra au Palais des Congrès de Lomé. Un lieu prestigieux pour un événement d'envergure.",
+        "content": "Nous avons le plaisir de confirmer que WinterFest 2026 se déroulera au Palais des Congrès de Lomé. Ce lieu prestigieux offre l'espace et les installations nécessaires pour accueillir les milliers de participants attendus. Sa localisation centrale facilitera l'accès pour tous.",
+        "image": "images/aff1.png",
+        "category": "Logistique",
+        "date": "2025-12-10",
+        "author": "Équipe WinterFest"
+    }
+]
