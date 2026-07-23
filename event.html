@@ -444,44 +444,9 @@
             <div class="about-content" style="max-width: 800px; margin: 0 auto;">
                 <p data-i18n="event.registration_text">L'entrée est gratuite mais l'inscription est obligatoire pour réserver votre place. Remplissez le formulaire ci-dessous.</p>
             </div>
-            <div style="max-width: 600px; margin: var(--spacing-lg) auto 0;">
-                <form action="https://api.web3forms.com/submit" method="POST" class="form" id="registration-form" onsubmit="return false;">
-                    <input type="hidden" name="access_key" value="611d385c-b19c-440c-8140-2c203060fae7">
-                    <input type="hidden" name="subject" value="Nouveau formulaire WinterFest">
-                    <input type="hidden" name="from_name" value="WinterFest Togo">
-                    <input type="hidden" name="source" value="Formulaire Inscription">
-                    <input type="text" name="honeypot" style="display: none;">
-                    <div class="form-group">
-                        <label for="registration-nom" class="form-label" data-i18n="event.registration_nom">Nom *</label>
-                        <input type="text" id="registration-nom" name="nom" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registration-prenom" class="form-label" data-i18n="event.registration_prenom">Prénom *</label>
-                        <input type="text" id="registration-prenom" name="prenom" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registration-email" class="form-label" data-i18n="event.registration_email">Email *</label>
-                        <input type="email" id="registration-email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registration-telephone" class="form-label" data-i18n="event.registration_telephone">Téléphone *</label>
-                        <input type="tel" id="registration-telephone" name="telephone" class="form-input" required placeholder="+228 90 00 00 00" data-i18n-placeholder="event.registration_placeholder_telephone">
-                    </div>
-                    <div class="form-group">
-                        <label for="registration-age" class="form-label" data-i18n="event.registration_age">Âge *</label>
-                        <input type="number" id="registration-age" name="age" class="form-input" required min="16">
-                    </div>
-                    <div class="form-group">
-                        <label for="registration-eglise" class="form-label" data-i18n="event.registration_eglise">Église (si applicable)</label>
-                        <input type="text" id="registration-eglise" name="eglise" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="registration-ville" class="form-label" data-i18n="event.registration_ville">Ville *</label>
-                        <input type="text" id="registration-ville" name="ville" class="form-input" required>
-                    </div>
-                    <button type="submit" class="form-submit" data-i18n="event.registration_submit">S'inscrire</button>
-                </form>
-            </div>
+                <div class="hero-buttons" style="text-align: center;">
+                    <a href="https://forms.gle/FKjRkrTZnrQgtKFe7" target="_blank" class="btn btn-secondary" style="padding: 1.5rem 4rem; font-size: 1.2rem;" aria-label="S'inscrire à Winterfest" data-i18n="home.btn_register">S'inscrire</a>
+                </div>
         </div>
     </section>
 
